@@ -6,5 +6,6 @@ def sub(a,b):
     return a-b 
 
 
-print(add(10,20) )
+print(add(10,20))
+print(sub(10,5))
 
