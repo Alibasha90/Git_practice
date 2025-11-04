@@ -1,0 +1,47 @@
+✅ Fix: Generate & Add SSH Key
+
+Step 1: Check if SSH key exists
+#####################################
+ls ~/.ssh
+
+
+If you don't see id_rsa / id_ed25519 files, create a new key.
+
+Step 2: Create an SSH key
+(recommended ED25519 type)
+#####################################
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+
+Press Enter 3 times.
+
+Step 3: Start SSH Agent & add key
+#####################################
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+
+
+Step 4: Copy SSH Public key
+#################################
+cat ~/.ssh/id_ed25519.pub
+
+
+Copy the output.
+
+Step 5: Add key in GitHub
+Go to GitHub → Settings → SSH and GPG keys → New SSH key
+Paste the copied key and save.
+##############################################
+✅ Test SSH Connection
+
+just give the command for testing after console will show the message.
+
+>>ssh -T git@github.com
+
+
+Expected output:
+
+Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+
+✅ Now clone again
+git clone git@github.com:Alibasha90/Git_practice.git
