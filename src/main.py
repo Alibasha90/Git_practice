@@ -10,7 +10,7 @@ def mul(a,b):
 
 def div(a,b):
     return a/b
-<<<<<<< Updated upstream
+
 
 print(add(10,20))
 print(sub(10,5))
